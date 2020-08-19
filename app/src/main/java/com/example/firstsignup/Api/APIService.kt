@@ -15,6 +15,7 @@ interface APIService {
             @Field("first_name") first_name: String?,
             @Field("last_name") last_name: String?,
             @Field("email") email: String?,
+            @Field("phone") phone: String?,
             @Field("password") password: String?): Call<User?>?
 
     @FormUrlEncoded

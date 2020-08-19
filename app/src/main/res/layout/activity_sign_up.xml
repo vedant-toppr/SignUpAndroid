@@ -29,21 +29,14 @@
             android:hint="@string/signUpUsername"
             android:inputType="textPersonName" />
 
-        <LinearLayout
+        <EditText
+            android:id="@+id/editTextFirstName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <EditText
-                android:id="@+id/editTextFirstName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:ems="10"
-                android:hint="@string/signUpFirstName"
-                android:inputType="textPersonName" />
-
-        </LinearLayout>
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="@string/signUpFirstName"
+            android:inputType="textPersonName" />
 
         <EditText
             android:id="@+id/editTextLastName"
@@ -53,6 +46,14 @@
             android:ems="10"
             android:hint="@string/signUpLastName"
             android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/editTextPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/SignUpPhone"
+            android:inputType="phone" />
 
         <EditText
             android:id="@+id/editTextEmail"

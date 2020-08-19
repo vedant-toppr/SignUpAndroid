@@ -10,4 +10,5 @@
     <string name="signUpPassword">Password</string>
     <string name="hotspotIp">http://192.168.29.217:8000/</string>
     <string name="logout">Log Out</string>
+    <string name="SignUpPhone">Mobile Number</string>
 </resources>

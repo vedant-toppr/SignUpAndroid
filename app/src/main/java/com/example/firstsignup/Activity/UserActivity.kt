@@ -18,7 +18,7 @@ class UserActivity : AppCompatActivity(), View.OnClickListener {
         textView = findViewById(R.id.textView)
         val user = SharedPrefManager.getInstance(this)?.user
         if (user != null) {
-            textView!!.text = "Hello, "+user.first_name
+            textView!!.text = "Hello, "+ user.first_name
         }
         buttonLogOut = findViewById(R.id.buttonLogOut)
         buttonLogOut!!.setOnClickListener(this)

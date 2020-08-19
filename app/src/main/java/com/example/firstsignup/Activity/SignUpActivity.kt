@@ -19,12 +19,16 @@ import retrofit2.Response
 import java.io.IOException
 
 class SignUpActivity : AppCompatActivity(), View.OnClickListener {
+
     private var buttonSignUp: Button? = null
     private var editTextFirstName: EditText? = null
     private var editTextLastName: EditText? = null
     private var editTextUsername: EditText? = null
     private var editTextEmail: EditText? = null
+    private var editTextPhone: EditText? = null
     private var editTextPassword: EditText? = null
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up)
@@ -33,6 +37,7 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener {
         editTextFirstName = findViewById<View>(R.id.editTextFirstName) as EditText
         editTextLastName = findViewById<View>(R.id.editTextLastName) as EditText
         editTextEmail = findViewById<View>(R.id.editTextEmail) as EditText
+        editTextPhone = findViewById<View>(R.id.editTextPhone) as EditText
         editTextPassword = findViewById<View>(R.id.editTextPassword) as EditText
         buttonSignUp!!.setOnClickListener(this)
     }
@@ -49,6 +54,7 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener {
         val last_name = editTextLastName!!.text.toString().trim { it <= ' ' }
         val email = editTextEmail!!.text.toString().trim { it <= ' ' }
         val password = editTextPassword!!.text.toString().trim { it <= ' ' }
+        val phone = editTextPhone!!.text.toString().trim { it <= ' ' }
         if (email.isEmpty()) {
             editTextEmail!!.error = "Email is required"
             editTextEmail!!.requestFocus()
@@ -79,6 +85,11 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener {
             editTextPassword!!.requestFocus()
             return
         }
+        if (phone.isEmpty()) {
+            editTextPhone!!.error = "Phone is required"
+            editTextPhone!!.requestFocus()
+            return
+        }
 //        val progressDialog = ProgressDialog(this)
 //        progressDialog.setMessage("Signing Up...")
 //        progressDialog.show()
@@ -90,6 +101,7 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener {
                         first_name,
                         last_name,
                         email,
+                        phone,
                         password)
         if (call != null) {
             call.enqueue(object : Callback<User?> {
