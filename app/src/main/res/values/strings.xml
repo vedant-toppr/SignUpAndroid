@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">FirstSignUp</string>
+    <string name="projectTitle">Welcome</string>
+    <string name="mainButtonLogin">Login</string>
+    <string name="mainButtonSignUp">Sign Up</string>
+    <string name="signUpUsername">Username</string>
+    <string name="signUpFirstName">First Name</string>
+    <string name="signUpLastName">Last Name</string>
+    <string name="signUpEmail">Email</string>
+    <string name="signUpPassword">Password</string>
+    <string name="hotspotIp">http://192.168.29.217:8000/</string>
+    <string name="logout">Log Out</string>
+</resources>
