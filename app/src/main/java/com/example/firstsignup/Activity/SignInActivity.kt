@@ -11,8 +11,10 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.firstsignup.Api.RetrofitClient
 import com.example.firstsignup.Model.LogInResponse
+import com.example.firstsignup.Model.User
 import com.example.firstsignup.R
 import com.example.firstsignup.Storage.SharedPrefManager
+import com.example.firstsignup.Utils.MiddleWareLayer
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -68,35 +70,21 @@ class SignInActivity : AppCompatActivity(), View.OnClickListener {
             editTextPassword!!.requestFocus()
             return
         }
+        val listener :MiddleWareLayer.MiddleWareListener
+        val mMiddleWareLayer : MiddleWareLayer? = RetrofitClient.instance?.let {MiddleWareLayer(it,listener)}
+        mMiddleWareLayer?.login(username, password)
+        
+    }
 
-//        val progressDialog = ProgressDialog(this)
-//        progressDialog.setMessage("Signing In...")
-//        progressDialog.show()
+    override fun onLoginSuccess(loginMessage: String, user: User){
+        Toast.makeText(this, loginMessage, Toast.LENGTH_SHORT).show()
+        SharedPrefManager.getInstance(this@SignInActivity)?.saveUser(user)
+        val intent = Intent(this@SignInActivity, UserActivity::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        startActivity(intent)
+    }
 
-        val call = RetrofitClient
-                .instance?.api?.userLogin(username, password)
-
-        if (call != null) {
-            call.enqueue(object : Callback<LogInResponse?> {
-                override fun onResponse(call: Call<LogInResponse?>, response: Response<LogInResponse?>) {
-//                progressDialog.dismiss()
-                    if (response.code() == 200) {
-                        val logInResponse = response.body()
-                        Toast.makeText(applicationContext, "Login Successful", Toast.LENGTH_LONG).show()
-                        SharedPrefManager.getInstance(this@SignInActivity)?.saveUser(logInResponse!!.user)
-                        val intent = Intent(this@SignInActivity, UserActivity::class.java)
-                        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-                        startActivity(intent)
-                    } else {
-                        Toast.makeText(applicationContext, "Invalid Credentials", Toast.LENGTH_LONG).show()
-                    }
-                }
-
-                override fun onFailure(call: Call<LogInResponse?>, t: Throwable) {
-//                progressDialog.dismiss()
-                    Toast.makeText(applicationContext, t.message, Toast.LENGTH_LONG).show()
-                }
-            })
-        }
+    override fun onLoginFailed(errorMessage: String){
+        Toast.makeText(this, errorMessage, Toast.LENGTH_SHORT).show()
     }
 }
