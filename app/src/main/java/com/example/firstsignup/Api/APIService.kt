@@ -2,10 +2,12 @@ package com.example.firstsignup.Api
 
 import com.example.firstsignup.Model.LogInResponse
 import com.example.firstsignup.Model.User
+import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
 import retrofit2.http.POST
+import retrofit2.http.PUT
 
 interface APIService {
     @FormUrlEncoded
@@ -21,6 +23,18 @@ interface APIService {
     @FormUrlEncoded
     @POST("token-auth/")
     fun userLogin(
-            @Field("username") usernmae: String?,
+            @Field("username") username: String?,
             @Field("password") password: String?): Call<LogInResponse?>?
+
+    @FormUrlEncoded
+    @PUT("/core/generate_otp/")
+    fun getOTP(
+            @Field("phone") phone: String?): Call<ResponseBody>?
+
+    @FormUrlEncoded
+    @PUT("/core/forget_pass/")
+    fun setPass(
+            @Field("phone") phone: String?,
+            @Field("otp") otp: String?,
+            @Field("new_password") new_password: String?): Call<ResponseBody>?
 }

@@ -9,7 +9,7 @@ class RetrofitClient private constructor() {
         get() = retrofit.create(APIService::class.java)
 
     companion object {
-        const val BASE_URL = "http://172.29.23.187:8000/"
+        const val BASE_URL = "http://172.29.21.63:8000/"
         private var mInstance: RetrofitClient? = null
 
         @get:Synchronized

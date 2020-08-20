@@ -4,7 +4,9 @@ package com.example.firstsignup.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.firstsignup.Api.RetrofitClient
@@ -18,12 +20,19 @@ import retrofit2.Response
 class SignInActivity : AppCompatActivity(), View.OnClickListener {
     private var editTextUsername: EditText? = null
     private var editTextPassword: EditText? = null
+    private var buttonSignIn: Button? = null
+    private var forgetPass: TextView? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_in)
         editTextUsername = findViewById(R.id.editTextUsername)
         editTextPassword = findViewById(R.id.editTextPassword)
-        findViewById<View>(R.id.buttonLogIn).setOnClickListener(this)
+        buttonSignIn = findViewById<View>(R.id.buttonLogIn) as Button
+        forgetPass = findViewById<View>(R.id.forgetPass) as TextView
+        buttonSignIn!!.setOnClickListener(this)
+        forgetPass!!.setOnClickListener(this)
+//        findViewById<View>(R.id.buttonLogIn).setOnClickListener(this)
+//        findViewById<View>(R.id.forgetPass).setOnClickListener(this)
     }
 
     override fun onStart() {
@@ -36,7 +45,12 @@ class SignInActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     override fun onClick(view: View) {
-        userLogin()
+        if (view === buttonSignIn) {
+            userLogin()
+        }
+        else if (view === forgetPass) {
+            startActivity(Intent(this, ForgetPassActivity::class.java))
+        }
     }
 
     private fun userLogin() {

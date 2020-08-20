@@ -11,4 +11,9 @@
     <string name="hotspotIp">http://192.168.29.217:8000/</string>
     <string name="logout">Log Out</string>
     <string name="SignUpPhone">Mobile Number</string>
+    <string name="getOtp">Get OTP</string>
+    <string name="enterOtp">Enter OTP</string>
+    <string name="newPassword">New Password</string>
+    <string name="changePassword">Change Password</string>
+    <string name="forgetPass">Forget Password?</string>
 </resources>
