@@ -75,6 +75,7 @@ class SignInActivity : AppCompatActivity(), View.OnClickListener {
 
         val call = RetrofitClient
                 .instance?.api?.userLogin(username, password)
+
         if (call != null) {
             call.enqueue(object : Callback<LogInResponse?> {
                 override fun onResponse(call: Call<LogInResponse?>, response: Response<LogInResponse?>) {

@@ -51,12 +51,12 @@ class ForgetPassActivity : AppCompatActivity(), View.OnClickListener {
         val otp= editTextOtp!!.text.toString().trim { it <= ' ' }
         val new_password = editTextPassword!!.text.toString().trim { it <= ' ' }
 
-        if (new_password.isEmpty()) {
-            editTextPassword!!.error = "Password is required"
-            editTextPassword!!.requestFocus()
+        if (otp.isEmpty()) {
+            editTextOtp!!.error = "OTP is required"
+            editTextOtp!!.requestFocus()
             return
         }
-        if (otp.isEmpty()) {
+        if (new_password.isEmpty()) {
             editTextPassword!!.error = "Password is required"
             editTextPassword!!.requestFocus()
             return
