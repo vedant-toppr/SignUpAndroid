@@ -4,30 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="20sp"
-    android:layout_marginLeft="20sp"
-    android:layout_marginTop="20sp"
-    android:layout_marginRight="20sp"
-    android:layout_marginBottom="20sp"
+    android:padding="20dp"
     android:background="@drawable/my_gradient_drawable"
-    tools:context=".ui.MainActivity">
-
+    tools:context=".Activity.MainActivity">
     <TextView
         android:id="@+id/welcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="256dp"
         android:text="@string/projectTitle"
         android:textColor="@color/colorPrimary"
         android:textColorHighlight="@color/colorPrimaryDark"
         android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.464"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.33" />
     <Button
         android:id="@+id/buttonSignUp"
         android:layout_width="wrap_content"
@@ -38,7 +33,6 @@
         android:textColor="@color/colorPrimary"
         app:layout_constraintBaseline_toBaselineOf="@+id/buttonSignIn"
         app:layout_constraintEnd_toEndOf="parent" />
-
     <Button
         android:id="@+id/buttonSignIn"
         android:layout_width="wrap_content"
@@ -55,5 +49,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/welcome"
         app:layout_constraintVertical_bias="0.0" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

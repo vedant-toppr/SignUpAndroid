@@ -15,7 +15,7 @@ class SignInMiddleware(private val apiService: APIService?, private val listener
                     val logInResponse = response.body()
                     listener.onLoginSuccess(logInResponse)
                 } else {
-                    listener.onLoginFailed(response.errorBody().toString())
+                    listener.onLoginFailed("Invalid Credentials")
                 }
             }
 
