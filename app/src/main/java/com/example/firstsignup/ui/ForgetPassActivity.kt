@@ -3,22 +3,14 @@ package com.example.firstsignup.ui
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.firstsignup.network.RetrofitClient
 import com.example.firstsignup.R
-import com.example.firstsignup.model.LogInResponse
-import com.example.firstsignup.storage.SharedPrefManager
 import com.example.firstsignup.utils.GetOtpMiddleware
 import com.example.firstsignup.utils.SetPassMiddleware
-import com.example.firstsignup.utils.SignInMiddleware
 import com.example.firstsignup.utils.ValidationHelper
-import okhttp3.ResponseBody
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 class ForgetPassActivity : AppCompatActivity(), GetOtpMiddleware.MiddleWareListener, SetPassMiddleware.MiddleWareListener{
     private var editTextPhone: EditText? = null
@@ -29,13 +21,13 @@ class ForgetPassActivity : AppCompatActivity(), GetOtpMiddleware.MiddleWareListe
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_forget_pass)
 
-        editTextPhone = findViewById(R.id.editTextForgetPhone)
-        editTextOtp = findViewById(R.id.editTextForgetOtp)
-        editTextPassword = findViewById(R.id.editTextForgetPassword)
-        findViewById<View>(R.id.buttonSetPass).setOnClickListener {
+        editTextPhone = findViewById(R.id.edit_text_forget_phone)
+        editTextOtp = findViewById(R.id.edit_text_forget_otp)
+        editTextPassword = findViewById(R.id.edit_text_forget_password)
+        findViewById<View>(R.id.button_set_pass).setOnClickListener {
             setPass()
         }
-        findViewById<View>(R.id.buttonGetOtp).setOnClickListener {
+        findViewById<View>(R.id.button_get_otp).setOnClickListener {
             getOTP()
         }
     }
@@ -64,9 +56,9 @@ class ForgetPassActivity : AppCompatActivity(), GetOtpMiddleware.MiddleWareListe
     override fun onOtpSuccess(message: String?) {
         editTextOtp?.visibility= View.VISIBLE
         editTextPassword?.visibility= View.VISIBLE
-        findViewById<View>(R.id.buttonSetPass).visibility = View.VISIBLE
+        findViewById<View>(R.id.button_set_pass).visibility = View.VISIBLE
         editTextPhone?.isEnabled = false
-        findViewById<View>(R.id.buttonGetOtp).isEnabled = false
+        findViewById<View>(R.id.button_get_otp).isEnabled = false
         showToastMessage(message ?: "")
     }
 

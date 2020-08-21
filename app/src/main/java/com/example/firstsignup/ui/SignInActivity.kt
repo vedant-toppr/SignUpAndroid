@@ -4,13 +4,10 @@ package com.example.firstsignup.ui
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
 import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.firstsignup.network.RetrofitClient
-import com.example.firstsignup.model.User
 import com.example.firstsignup.R
 import com.example.firstsignup.model.LogInResponse
 import com.example.firstsignup.storage.SharedPrefManager
@@ -24,13 +21,13 @@ class SignInActivity : AppCompatActivity(), SignInMiddleware.MiddleWareListener 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_in)
-        editTextUsername = findViewById(R.id.editTextUsername)
-        editTextPassword = findViewById(R.id.editTextPassword)
+        editTextUsername = findViewById(R.id.edit_text_username)
+        editTextPassword = findViewById(R.id.edit_text_password)
 
-        findViewById<View>(R.id.buttonLogIn).setOnClickListener {
+        findViewById<View>(R.id.button_log_in).setOnClickListener {
             userLogin()
         }
-        findViewById<View>(R.id.forgetPass).setOnClickListener {
+        findViewById<View>(R.id.forget_pass).setOnClickListener {
             startActivity(Intent(this, ForgetPassActivity::class.java))
         }
     }

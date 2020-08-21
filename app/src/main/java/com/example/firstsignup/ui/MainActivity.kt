@@ -14,8 +14,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        buttonSignIn = findViewById<View>(R.id.buttonSignIn) as Button
-        buttonSignUp = findViewById<View>(R.id.buttonSignUp) as Button
+        buttonSignIn = findViewById<View>(R.id.button_sign_in) as Button
+        buttonSignUp = findViewById<View>(R.id.button_sign_up) as Button
         buttonSignIn!!.setOnClickListener(this)
         buttonSignUp!!.setOnClickListener(this)
     }

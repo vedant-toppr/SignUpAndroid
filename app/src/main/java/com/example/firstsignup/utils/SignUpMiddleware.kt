@@ -7,6 +7,7 @@ import com.example.firstsignup.network.APIService
 import com.example.firstsignup.network.RetrofitClient
 import com.example.firstsignup.storage.SharedPrefManager
 import com.example.firstsignup.ui.UserActivity
+import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -21,12 +22,14 @@ class SignUpMiddleware(private val apiService: APIService?, private val listener
                     val signupResponse = response.body()
                     listener.onSignupSuccess(signupResponse)
                 } else if (response.code() == 400) {
-                    try {
-                        val s = response.errorBody()!!.string()
-                        listener.onSignupFailed(s)
-                    } catch (e: IOException) {
-                        e.printStackTrace()
-                    }
+                    val jsonObject = JSONObject(response.errorBody()?.string())
+                    listener.onSignupFailed(jsonObject.getString("msg"))
+//                    try {
+//                        val s = response.errorBody()!!.string()
+//                        listener.onSignupFailed(s)
+//                    } catch (e: IOException) {
+//                        e.printStackTrace()
+//                    }
                 }
             }
 

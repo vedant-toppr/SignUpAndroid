@@ -15,12 +15,12 @@ class UserActivity : AppCompatActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_user)
-        textView = findViewById(R.id.textView)
+        textView = findViewById(R.id.text_view)
         val user = SharedPrefManager.getInstance(this)?.user
         if (user != null) {
             textView!!.text = "Hello, "+ user.first_name
         }
-        buttonLogOut = findViewById(R.id.buttonLogOut)
+        buttonLogOut = findViewById(R.id.button_log_out)
         buttonLogOut!!.setOnClickListener(this)
     }
 

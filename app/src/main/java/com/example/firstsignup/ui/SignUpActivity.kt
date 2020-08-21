@@ -3,23 +3,16 @@ package com.example.firstsignup.ui
 //import android.app.ProgressDialog
 import android.content.Intent
 import android.os.Bundle
-import android.util.Patterns
 import android.view.View
-import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.firstsignup.network.RetrofitClient
 import com.example.firstsignup.model.User
 import com.example.firstsignup.R
-import com.example.firstsignup.model.LogInResponse
 import com.example.firstsignup.storage.SharedPrefManager
 import com.example.firstsignup.utils.SignUpMiddleware
 import com.example.firstsignup.utils.ValidationHelper
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-import java.io.IOException
 
 class SignUpActivity : AppCompatActivity(), SignUpMiddleware.MiddleWareListener {
 
@@ -34,13 +27,13 @@ class SignUpActivity : AppCompatActivity(), SignUpMiddleware.MiddleWareListener 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up)
-        editTextUsername = findViewById<View>(R.id.editTextUsername) as EditText
-        editTextFirstName = findViewById<View>(R.id.editTextFirstName) as EditText
-        editTextLastName = findViewById<View>(R.id.editTextLastName) as EditText
-        editTextEmail = findViewById<View>(R.id.editTextEmail) as EditText
-        editTextPhone = findViewById<View>(R.id.editTextPhone) as EditText
-        editTextPassword = findViewById<View>(R.id.editTextPassword) as EditText
-        findViewById<View>(R.id.buttonRegister).setOnClickListener {
+        editTextUsername = findViewById<View>(R.id.edit_text_username) as EditText
+        editTextFirstName = findViewById<View>(R.id.edit_text_first_name) as EditText
+        editTextLastName = findViewById<View>(R.id.edit_text_last_name) as EditText
+        editTextEmail = findViewById<View>(R.id.edit_text_email) as EditText
+        editTextPhone = findViewById<View>(R.id.edit_text_phone) as EditText
+        editTextPassword = findViewById<View>(R.id.edit_text_password) as EditText
+        findViewById<View>(R.id.button_register).setOnClickListener {
             userSignUp()
         }
     }

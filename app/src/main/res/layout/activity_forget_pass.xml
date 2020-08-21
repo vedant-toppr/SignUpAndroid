@@ -22,7 +22,7 @@
             android:orientation="horizontal">
 
             <EditText
-                android:id="@+id/editTextForgetPhone"
+                android:id="@+id/edit_text_forget_phone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -30,7 +30,7 @@
                 android:inputType="phone" />
 
             <Button
-                android:id="@+id/buttonGetOtp"
+                android:id="@+id/button_get_otp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -39,7 +39,7 @@
         </LinearLayout>
 
         <EditText
-            android:id="@+id/editTextForgetOtp"
+            android:id="@+id/edit_text_forget_otp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -48,7 +48,7 @@
             android:visibility="invisible" />
 
         <EditText
-            android:id="@+id/editTextForgetPassword"
+            android:id="@+id/edit_text_forget_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -57,7 +57,7 @@
             android:visibility="invisible" />
 
         <Button
-            android:id="@+id/buttonSetPass"
+            android:id="@+id/button_set_pass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/changePassword"
