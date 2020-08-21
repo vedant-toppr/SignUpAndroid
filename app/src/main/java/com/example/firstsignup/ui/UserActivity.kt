@@ -1,4 +1,4 @@
-package com.example.firstsignup.Activity
+package com.example.firstsignup.ui
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,7 +7,7 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.firstsignup.R
-import com.example.firstsignup.Storage.SharedPrefManager
+import com.example.firstsignup.storage.SharedPrefManager
 
 class UserActivity : AppCompatActivity(), View.OnClickListener {
     private var textView: TextView? = null

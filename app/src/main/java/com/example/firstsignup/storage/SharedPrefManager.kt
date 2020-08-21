@@ -1,7 +1,7 @@
-package com.example.firstsignup.Storage
+package com.example.firstsignup.storage
 
 import android.content.Context
-import com.example.firstsignup.Model.User
+import com.example.firstsignup.model.User
 
 class SharedPrefManager private constructor(private val mCtx: Context) {
     fun saveUser(user: User) {

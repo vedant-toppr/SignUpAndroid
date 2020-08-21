@@ -12,23 +12,23 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Activity.ForgetPassActivity"></activity>
-        <activity android:name=".Activity.UserActivity" />
+        <activity android:name=".ui.ForgetPassActivity"></activity>
+        <activity android:name=".ui.UserActivity" />
         <activity
-            android:name=".Activity.SignInActivity"
-            android:parentActivityName=".Activity.MainActivity">
+            android:name=".ui.SignInActivity"
+            android:parentActivityName=".ui.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".Activity.MainActivity" />
+                android:value=".ui.MainActivity" />
         </activity>
         <activity
-            android:name=".Activity.SignUpActivity"
-            android:parentActivityName=".Activity.MainActivity">
+            android:name=".ui.SignUpActivity"
+            android:parentActivityName=".ui.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".Activity.MainActivity" />
+                android:value=".ui.MainActivity" />
         </activity>
-        <activity android:name=".Activity.MainActivity">
+        <activity android:name=".ui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

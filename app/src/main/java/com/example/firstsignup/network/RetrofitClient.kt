@@ -1,4 +1,4 @@
-package com.example.firstsignup.Api
+package com.example.firstsignup.network
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

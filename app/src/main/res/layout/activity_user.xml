@@ -10,7 +10,7 @@
     android:layout_marginRight="20sp"
     android:layout_marginBottom="20sp"
     android:background="@drawable/my_gradient_drawable"
-    tools:context=".Activity.UserActivity">
+    tools:context=".ui.UserActivity">
 
     <TextView
         android:id="@+id/textView"

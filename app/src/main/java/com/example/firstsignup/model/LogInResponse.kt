@@ -1,3 +1,3 @@
-package com.example.firstsignup.Model
+package com.example.firstsignup.model
 
 class LogInResponse(private val token: String, val user: User)

@@ -1,7 +1,7 @@
-package com.example.firstsignup.Api
+package com.example.firstsignup.network
 
-import com.example.firstsignup.Model.LogInResponse
-import com.example.firstsignup.Model.User
+import com.example.firstsignup.model.LogInResponse
+import com.example.firstsignup.model.User
 import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.http.Field
