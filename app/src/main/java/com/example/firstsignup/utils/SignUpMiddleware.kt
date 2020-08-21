@@ -24,12 +24,6 @@ class SignUpMiddleware(private val apiService: APIService?, private val listener
                 } else if (response.code() == 400) {
                     val jsonObject = JSONObject(response.errorBody()?.string())
                     listener.onSignupFailed(jsonObject.getString("msg"))
-//                    try {
-//                        val s = response.errorBody()!!.string()
-//                        listener.onSignupFailed(s)
-//                    } catch (e: IOException) {
-//                        e.printStackTrace()
-//                    }
                 }
             }
 
